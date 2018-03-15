@@ -1,0 +1,2188 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 10500.18.0210.2209                               -->
+<workbook source-build='10.5.1 (10500.18.0210.2209)' source-platform='mac' version='10.5' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Master_Data.csv+ (Multiple Connections)' inline='true' name='federated.00lnh2y1jj76lr14pdxax0nyworf' version='10.5'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Master_Data' name='textscan.1br9uz00njx4oa19tjwwf1mwmmze'>
+            <connection class='textscan' directory='/Users/robertdeng/Google Drive/Data Science/W209/Project' filename='Master_Data.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='census_tract_shapefiles_all' name='textscan.0en8gw31t5u7yr1cn2jig1hdrqma'>
+            <connection class='textscan' directory='/Users/robertdeng/Google Drive/Data Science/W209/Project' filename='census_tract_shapefiles_all.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[Master_Data.csv].[Id2]' />
+              <expression op='[census_tract_shapefiles_all.csv].[GEOID]' />
+            </expression>
+          </clause>
+          <relation connection='textscan.1br9uz00njx4oa19tjwwf1mwmmze' name='Master_Data.csv' table='[Master_Data#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='integer' name='Census_Tract' ordinal='1' />
+              <column datatype='string' name='County' ordinal='2' />
+              <column datatype='string' name='State' ordinal='3' />
+              <column datatype='string' name='Id' ordinal='4' />
+              <column datatype='integer' name='Id2' ordinal='5' />
+              <column datatype='integer' name='Margin of Error; Total' ordinal='6' />
+              <column datatype='integer' name='Estimate; Total' ordinal='7' />
+              <column datatype='real' name='PUMA' ordinal='8' />
+              <column datatype='real' name='FAMSIZE' ordinal='9' />
+              <column datatype='real' name='YRSUSA1' ordinal='10' />
+              <column datatype='real' name='RACE_2' ordinal='11' />
+              <column datatype='real' name='RACE_3' ordinal='12' />
+              <column datatype='real' name='RACE_4' ordinal='13' />
+              <column datatype='real' name='RACE_5' ordinal='14' />
+              <column datatype='real' name='RACE_6' ordinal='15' />
+              <column datatype='real' name='RACE_7' ordinal='16' />
+              <column datatype='real' name='RACE_8' ordinal='17' />
+              <column datatype='real' name='RACE_9' ordinal='18' />
+              <column datatype='real' name='FARM_1' ordinal='19' />
+              <column datatype='real' name='FARM_2' ordinal='20' />
+              <column datatype='real' name='CITIZEN_0' ordinal='21' />
+              <column datatype='real' name='CITIZEN_1' ordinal='22' />
+              <column datatype='real' name='CITIZEN_2' ordinal='23' />
+              <column datatype='real' name='CITIZEN_3' ordinal='24' />
+              <column datatype='real' name='SPEAKS_ENGLISH_0' ordinal='25' />
+              <column datatype='real' name='SPEAKS_ENGLISH_1' ordinal='26' />
+              <column datatype='real' name='SPEAKS_ENGLISH_3' ordinal='27' />
+              <column datatype='real' name='SPEAKS_ENGLISH_4' ordinal='28' />
+              <column datatype='real' name='SPEAKS_ENGLISH_5' ordinal='29' />
+              <column datatype='real' name='SPEAKS_ENGLISH_6' ordinal='30' />
+              <column datatype='real' name='HEALTH_CARE_COVERAGE_1' ordinal='31' />
+              <column datatype='real' name='HEALTH_CARE_COVERAGE_2' ordinal='32' />
+              <column datatype='real' name='EDUCATION_0' ordinal='33' />
+              <column datatype='real' name='EDUCATION_1' ordinal='34' />
+              <column datatype='real' name='EDUCATION_2' ordinal='35' />
+              <column datatype='real' name='EDUCATION_3' ordinal='36' />
+              <column datatype='real' name='EDUCATION_4' ordinal='37' />
+              <column datatype='real' name='EDUCATION_5' ordinal='38' />
+              <column datatype='real' name='EDUCATION_6' ordinal='39' />
+              <column datatype='real' name='EDUCATION_7' ordinal='40' />
+              <column datatype='real' name='EMPLOYMENT_0' ordinal='41' />
+              <column datatype='real' name='EMPLOYMENT_1' ordinal='42' />
+              <column datatype='real' name='EMPLOYMENT_2' ordinal='43' />
+              <column datatype='real' name='EMPLOYMENT_3' ordinal='44' />
+              <column datatype='real' name='STATEFP' ordinal='45' />
+              <column datatype='real' name='COUNTYFP' ordinal='46' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0en8gw31t5u7yr1cn2jig1hdrqma' name='census_tract_shapefiles_all.csv' table='[census_tract_shapefiles_all#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='GEOID' ordinal='0' />
+              <column datatype='integer' name='PointOrder' ordinal='1' />
+              <column datatype='integer' name='SubPolygonId' ordinal='2' />
+              <column datatype='real' name='PointLatitude' ordinal='3' />
+              <column datatype='real' name='PointLongitude' ordinal='4' />
+            </columns>
+          </relation>
+        </relation>
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Census_Tract</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Census_Tract]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>Census_Tract</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>County</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[County]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>County</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>State</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[State]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>State</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Id]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>Id</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Id2</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Id2]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>Id2</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Margin of Error; Total</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Margin of Error; Total]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>Margin of Error; Total</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Estimate; Total</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Estimate; Total]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>Estimate; Total</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PUMA</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[PUMA]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>PUMA</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FAMSIZE</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[FAMSIZE]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>FAMSIZE</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YRSUSA1</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[YRSUSA1]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>YRSUSA1</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RACE_2</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[RACE_2]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>RACE_2</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RACE_3</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[RACE_3]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>RACE_3</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RACE_4</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[RACE_4]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>RACE_4</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RACE_5</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[RACE_5]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>RACE_5</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RACE_6</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[RACE_6]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>RACE_6</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RACE_7</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[RACE_7]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>RACE_7</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RACE_8</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[RACE_8]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>RACE_8</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RACE_9</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[RACE_9]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>RACE_9</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FARM_1</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[FARM_1]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>FARM_1</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FARM_2</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[FARM_2]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>FARM_2</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CITIZEN_0</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[CITIZEN_0]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>CITIZEN_0</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CITIZEN_1</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[CITIZEN_1]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>CITIZEN_1</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CITIZEN_2</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[CITIZEN_2]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>CITIZEN_2</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CITIZEN_3</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[CITIZEN_3]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>CITIZEN_3</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SPEAKS_ENGLISH_0</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[SPEAKS_ENGLISH_0]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>SPEAKS_ENGLISH_0</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SPEAKS_ENGLISH_1</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[SPEAKS_ENGLISH_1]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>SPEAKS_ENGLISH_1</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SPEAKS_ENGLISH_3</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[SPEAKS_ENGLISH_3]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>SPEAKS_ENGLISH_3</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SPEAKS_ENGLISH_4</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[SPEAKS_ENGLISH_4]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>SPEAKS_ENGLISH_4</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SPEAKS_ENGLISH_5</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[SPEAKS_ENGLISH_5]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>SPEAKS_ENGLISH_5</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SPEAKS_ENGLISH_6</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[SPEAKS_ENGLISH_6]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>SPEAKS_ENGLISH_6</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HEALTH_CARE_COVERAGE_1</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[HEALTH_CARE_COVERAGE_1]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>HEALTH_CARE_COVERAGE_1</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HEALTH_CARE_COVERAGE_2</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[HEALTH_CARE_COVERAGE_2]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>HEALTH_CARE_COVERAGE_2</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EDUCATION_0</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[EDUCATION_0]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>EDUCATION_0</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EDUCATION_1</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[EDUCATION_1]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>EDUCATION_1</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EDUCATION_2</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[EDUCATION_2]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>EDUCATION_2</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EDUCATION_3</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[EDUCATION_3]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>EDUCATION_3</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EDUCATION_4</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[EDUCATION_4]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>EDUCATION_4</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EDUCATION_5</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[EDUCATION_5]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>EDUCATION_5</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EDUCATION_6</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[EDUCATION_6]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>EDUCATION_6</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EDUCATION_7</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[EDUCATION_7]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>EDUCATION_7</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EMPLOYMENT_0</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[EMPLOYMENT_0]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>EMPLOYMENT_0</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EMPLOYMENT_1</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[EMPLOYMENT_1]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>EMPLOYMENT_1</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EMPLOYMENT_2</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[EMPLOYMENT_2]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>EMPLOYMENT_2</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EMPLOYMENT_3</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[EMPLOYMENT_3]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>EMPLOYMENT_3</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>STATEFP</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[STATEFP]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>STATEFP</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>COUNTYFP</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[COUNTYFP]</local-name>
+            <parent-name>[Master_Data.csv]</parent-name>
+            <remote-alias>COUNTYFP</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[census_tract_shapefiles_all.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GEOID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[GEOID]</local-name>
+            <parent-name>[census_tract_shapefiles_all.csv]</parent-name>
+            <remote-alias>GEOID</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PointOrder</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PointOrder]</local-name>
+            <parent-name>[census_tract_shapefiles_all.csv]</parent-name>
+            <remote-alias>PointOrder</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SubPolygonId</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SubPolygonId]</local-name>
+            <parent-name>[census_tract_shapefiles_all.csv]</parent-name>
+            <remote-alias>SubPolygonId</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PointLatitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[PointLatitude]</local-name>
+            <parent-name>[census_tract_shapefiles_all.csv]</parent-name>
+            <remote-alias>PointLatitude</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PointLongitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[PointLongitude]</local-name>
+            <parent-name>[census_tract_shapefiles_all.csv]</parent-name>
+            <remote-alias>PointLongitude</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Citizen - N/A' datatype='real' name='[CITIZEN_0]' role='measure' type='quantitative' />
+      <column caption='Citizen - Born of American Parents' datatype='real' name='[CITIZEN_1]' role='measure' type='quantitative' />
+      <column caption='Citizen - Naturalized Citizen' datatype='real' name='[CITIZEN_2]' role='measure' type='quantitative' />
+      <column caption='Citizen - Not a Citizen' datatype='real' name='[CITIZEN_3]' role='measure' type='quantitative' />
+      <column aggregation='Sum' caption='Countyfp' datatype='real' name='[COUNTYFP]' role='dimension' type='ordinal' />
+      <column caption='Unemployment Rate' datatype='real' name='[Calculation_2733614650822086657]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='1-sum([EMPLOYMENT_1])/sum([EMPLOYMENT_1]+[EMPLOYMENT_2])' />
+      </column>
+      <column aggregation='Sum' caption='Census Tract' datatype='integer' name='[Census_Tract]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[County]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column caption='Education N/A' datatype='real' name='[EDUCATION_0]' role='measure' type='quantitative' />
+      <column caption='Education Preschool' datatype='real' name='[EDUCATION_1]' role='measure' type='quantitative' />
+      <column caption='Education Kindergarten' datatype='real' name='[EDUCATION_2]' role='measure' type='quantitative' />
+      <column caption='Education Elementary School' datatype='real' name='[EDUCATION_3]' role='measure' type='quantitative' />
+      <column caption='Education Middle School' datatype='real' name='[EDUCATION_4]' role='measure' type='quantitative' />
+      <column caption='Education High School' datatype='real' name='[EDUCATION_5]' role='measure' type='quantitative' />
+      <column caption='Education College' datatype='real' name='[EDUCATION_6]' role='measure' type='quantitative' />
+      <column caption='Education Graduate School' datatype='real' name='[EDUCATION_7]' role='measure' type='quantitative' />
+      <column caption='Employment - N/A' datatype='real' name='[EMPLOYMENT_0]' role='measure' type='quantitative' />
+      <column caption='Employment - Employed' datatype='real' name='[EMPLOYMENT_1]' role='measure' type='quantitative' />
+      <column caption='Employment - Unemployed' datatype='real' name='[EMPLOYMENT_2]' role='measure' type='quantitative' />
+      <column caption='Employment - Not in Labor Force' datatype='real' name='[EMPLOYMENT_3]' role='measure' type='quantitative' />
+      <column caption='Total Population Estimate' datatype='integer' name='[Estimate; Total]' role='measure' type='quantitative' />
+      <column aggregation='Sum' datatype='integer' name='[F1]' role='dimension' type='ordinal' />
+      <column caption='Famsize' datatype='real' name='[FAMSIZE]' role='measure' type='quantitative' />
+      <column caption='Farm - Non-Farm' datatype='real' name='[FARM_1]' role='measure' type='quantitative' />
+      <column caption='Farm - Farm' datatype='real' name='[FARM_2]' role='measure' type='quantitative' />
+      <column aggregation='Sum' caption='Geoid' datatype='integer' name='[GEOID]' role='dimension' type='ordinal' />
+      <column caption='Health Care Coverage - No Coverage' datatype='real' name='[HEALTH_CARE_COVERAGE_1]' role='measure' type='quantitative' />
+      <column caption='Health Care Coverage - Coverage' datatype='real' name='[HEALTH_CARE_COVERAGE_2]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Id2]' role='dimension' type='ordinal' />
+      <column caption='Total Margin of Error' datatype='integer' name='[Margin of Error; Total]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column aggregation='Sum' caption='Puma' datatype='real' name='[PUMA]' role='dimension' type='ordinal' />
+      <column aggregation='Avg' caption='Point Latitude' datatype='real' name='[PointLatitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' caption='Point Longitude' datatype='real' name='[PointLongitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column aggregation='Sum' caption='Point Order' datatype='integer' name='[PointOrder]' role='dimension' type='ordinal' />
+      <column caption='Race - Black' datatype='real' name='[RACE_2]' role='measure' type='quantitative' />
+      <column caption='Race - American Indian' datatype='real' name='[RACE_3]' role='measure' type='quantitative' />
+      <column caption='Race - Chinese' datatype='real' name='[RACE_4]' role='measure' type='quantitative' />
+      <column caption='Race - Japanese' datatype='real' name='[RACE_5]' role='measure' type='quantitative' />
+      <column caption='Race - Other Asian Pacific Islander' datatype='real' name='[RACE_6]' role='measure' type='quantitative' />
+      <column caption='Race - Other' datatype='real' name='[RACE_7]' role='measure' type='quantitative' />
+      <column caption='Race - Two Major Races' datatype='real' name='[RACE_8]' role='measure' type='quantitative' />
+      <column caption='Race - Three or more Major Races' datatype='real' name='[RACE_9]' role='measure' type='quantitative' />
+      <column caption='Speaks English - N/A' datatype='real' name='[SPEAKS_ENGLISH_0]' role='measure' type='quantitative' />
+      <column caption='Speaks English - Does Not Speak English' datatype='real' name='[SPEAKS_ENGLISH_1]' role='measure' type='quantitative' />
+      <column caption='Speaks English - Yes, Speaks English ..' datatype='real' name='[SPEAKS_ENGLISH_3]' role='measure' type='quantitative' />
+      <column caption='Speaks English - Speaks very well' datatype='real' name='[SPEAKS_ENGLISH_4]' role='measure' type='quantitative' />
+      <column caption='Speaks English - Yes, speaks well' datatype='real' name='[SPEAKS_ENGLISH_5]' role='measure' type='quantitative' />
+      <column caption='Speaks English - Yes, but not well' datatype='real' name='[SPEAKS_ENGLISH_6]' role='measure' type='quantitative' />
+      <column aggregation='Sum' caption='Statefp' datatype='real' name='[STATEFP]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Sub Polygon Id' datatype='integer' name='[SubPolygonId]' role='dimension' type='ordinal' />
+      <column caption='Years Spent in USA' datatype='real' name='[YRSUSA1]' role='measure' type='quantitative' />
+      <drill-paths>
+        <drill-path name='Geo Codes'>
+          <field>[COUNTYFP]</field>
+          <field>[Census_Tract]</field>
+          <field>[PUMA]</field>
+          <field>[STATEFP]</field>
+        </drill-path>
+        <drill-path name='Polygon Dimensions'>
+          <field>[GEOID]</field>
+          <field>[PointOrder]</field>
+          <field>[SubPolygonId]</field>
+          <field>[Id]</field>
+          <field>[Id2]</field>
+        </drill-path>
+        <drill-path name='State, County'>
+          <field>[State]</field>
+          <field>[County]</field>
+        </drill-path>
+      </drill-paths>
+      <folder name='Census Population Estimates' role='measures'>
+        <folder-item name='[Estimate; Total]' type='field' />
+        <folder-item name='[Margin of Error; Total]' type='field' />
+      </folder>
+      <folder name='Education Metrics' role='measures'>
+        <folder-item name='[EDUCATION_0]' type='field' />
+        <folder-item name='[EDUCATION_1]' type='field' />
+        <folder-item name='[EDUCATION_2]' type='field' />
+        <folder-item name='[EDUCATION_3]' type='field' />
+        <folder-item name='[EDUCATION_4]' type='field' />
+        <folder-item name='[EDUCATION_5]' type='field' />
+        <folder-item name='[EDUCATION_6]' type='field' />
+        <folder-item name='[EDUCATION_7]' type='field' />
+      </folder>
+      <folder name='Healthcare Coverage Metrics' role='measures'>
+        <folder-item name='[HEALTH_CARE_COVERAGE_1]' type='field' />
+        <folder-item name='[HEALTH_CARE_COVERAGE_2]' type='field' />
+      </folder>
+      <folder name='Immigration / Citizenship Metrics' role='measures'>
+        <folder-item name='[CITIZEN_0]' type='field' />
+        <folder-item name='[CITIZEN_1]' type='field' />
+        <folder-item name='[CITIZEN_2]' type='field' />
+        <folder-item name='[CITIZEN_3]' type='field' />
+        <folder-item name='[FAMSIZE]' type='field' />
+        <folder-item name='[SPEAKS_ENGLISH_0]' type='field' />
+        <folder-item name='[SPEAKS_ENGLISH_1]' type='field' />
+        <folder-item name='[SPEAKS_ENGLISH_3]' type='field' />
+        <folder-item name='[SPEAKS_ENGLISH_4]' type='field' />
+        <folder-item name='[SPEAKS_ENGLISH_5]' type='field' />
+        <folder-item name='[SPEAKS_ENGLISH_6]' type='field' />
+        <folder-item name='[YRSUSA1]' type='field' />
+      </folder>
+      <folder name='Polygon Points' role='measures'>
+        <folder-item name='[PointLatitude]' type='field' />
+        <folder-item name='[PointLongitude]' type='field' />
+      </folder>
+      <folder name='Race Metrics' role='measures'>
+        <folder-item name='[RACE_2]' type='field' />
+        <folder-item name='[RACE_3]' type='field' />
+        <folder-item name='[RACE_4]' type='field' />
+        <folder-item name='[RACE_5]' type='field' />
+        <folder-item name='[RACE_6]' type='field' />
+        <folder-item name='[RACE_7]' type='field' />
+        <folder-item name='[RACE_8]' type='field' />
+        <folder-item name='[RACE_9]' type='field' />
+      </folder>
+      <folder name='Rural Status' role='measures'>
+        <folder-item name='[FARM_1]' type='field' />
+        <folder-item name='[FARM_2]' type='field' />
+      </folder>
+      <folder name='Unemployment Metrics' role='measures'>
+        <folder-item name='[Calculation_2733614650822086657]' type='field' />
+        <folder-item name='[EMPLOYMENT_0]' type='field' />
+        <folder-item name='[EMPLOYMENT_1]' type='field' />
+        <folder-item name='[EMPLOYMENT_2]' type='field' />
+        <folder-item name='[EMPLOYMENT_3]' type='field' />
+      </folder>
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='/Users/krista/Desktop/209/w209_final_project/Tableau/Master_Data.csv+ (Multiple Connections).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='03/15/2018 01:08:14 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh increment-key='' incremental-updates='false'>
+            <refresh-event add-from-file-path='' increment-value='%null%' refresh-type='create' rows-inserted='1953686' timestamp-start='2018-03-15 13:08:13.856' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>F1</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[F1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>F1</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>492</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Census_Tract</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Census_Tract]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Census_Tract</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>339</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>County</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[County]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>County</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>80</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>State</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[State]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>State</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Id</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>492</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Id2</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Id2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Id2</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>492</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Margin of Error; Total</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Margin of Error; Total]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Margin of Error; Total</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>277</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Estimate; Total</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Estimate; Total]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Estimate; Total</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>451</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PUMA</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[PUMA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PUMA</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>FAMSIZE</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[FAMSIZE]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>FAMSIZE</remote-alias>
+              <ordinal>9</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>YRSUSA1</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[YRSUSA1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>YRSUSA1</remote-alias>
+              <ordinal>10</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>RACE_2</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[RACE_2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>RACE_2</remote-alias>
+              <ordinal>11</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>RACE_3</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[RACE_3]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>RACE_3</remote-alias>
+              <ordinal>12</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>RACE_4</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[RACE_4]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>RACE_4</remote-alias>
+              <ordinal>13</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>RACE_5</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[RACE_5]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>RACE_5</remote-alias>
+              <ordinal>14</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>RACE_6</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[RACE_6]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>RACE_6</remote-alias>
+              <ordinal>15</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>RACE_7</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[RACE_7]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>RACE_7</remote-alias>
+              <ordinal>16</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>RACE_8</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[RACE_8]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>RACE_8</remote-alias>
+              <ordinal>17</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>RACE_9</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[RACE_9]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>RACE_9</remote-alias>
+              <ordinal>18</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>FARM_1</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[FARM_1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>FARM_1</remote-alias>
+              <ordinal>19</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>FARM_2</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[FARM_2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>FARM_2</remote-alias>
+              <ordinal>20</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CITIZEN_0</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[CITIZEN_0]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CITIZEN_0</remote-alias>
+              <ordinal>21</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CITIZEN_1</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[CITIZEN_1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CITIZEN_1</remote-alias>
+              <ordinal>22</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CITIZEN_2</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[CITIZEN_2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CITIZEN_2</remote-alias>
+              <ordinal>23</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CITIZEN_3</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[CITIZEN_3]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CITIZEN_3</remote-alias>
+              <ordinal>24</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SPEAKS_ENGLISH_0</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[SPEAKS_ENGLISH_0]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SPEAKS_ENGLISH_0</remote-alias>
+              <ordinal>25</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SPEAKS_ENGLISH_1</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[SPEAKS_ENGLISH_1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SPEAKS_ENGLISH_1</remote-alias>
+              <ordinal>26</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SPEAKS_ENGLISH_3</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[SPEAKS_ENGLISH_3]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SPEAKS_ENGLISH_3</remote-alias>
+              <ordinal>27</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SPEAKS_ENGLISH_4</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[SPEAKS_ENGLISH_4]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SPEAKS_ENGLISH_4</remote-alias>
+              <ordinal>28</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SPEAKS_ENGLISH_5</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[SPEAKS_ENGLISH_5]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SPEAKS_ENGLISH_5</remote-alias>
+              <ordinal>29</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SPEAKS_ENGLISH_6</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[SPEAKS_ENGLISH_6]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SPEAKS_ENGLISH_6</remote-alias>
+              <ordinal>30</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>HEALTH_CARE_COVERAGE_1</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[HEALTH_CARE_COVERAGE_1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>HEALTH_CARE_COVERAGE_1</remote-alias>
+              <ordinal>31</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>HEALTH_CARE_COVERAGE_2</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[HEALTH_CARE_COVERAGE_2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>HEALTH_CARE_COVERAGE_2</remote-alias>
+              <ordinal>32</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>EDUCATION_0</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[EDUCATION_0]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>EDUCATION_0</remote-alias>
+              <ordinal>33</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>EDUCATION_1</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[EDUCATION_1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>EDUCATION_1</remote-alias>
+              <ordinal>34</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>EDUCATION_2</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[EDUCATION_2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>EDUCATION_2</remote-alias>
+              <ordinal>35</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>EDUCATION_3</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[EDUCATION_3]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>EDUCATION_3</remote-alias>
+              <ordinal>36</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>EDUCATION_4</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[EDUCATION_4]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>EDUCATION_4</remote-alias>
+              <ordinal>37</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>EDUCATION_5</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[EDUCATION_5]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>EDUCATION_5</remote-alias>
+              <ordinal>38</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>EDUCATION_6</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[EDUCATION_6]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>EDUCATION_6</remote-alias>
+              <ordinal>39</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>EDUCATION_7</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[EDUCATION_7]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>EDUCATION_7</remote-alias>
+              <ordinal>40</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>EMPLOYMENT_0</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[EMPLOYMENT_0]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>EMPLOYMENT_0</remote-alias>
+              <ordinal>41</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>EMPLOYMENT_1</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[EMPLOYMENT_1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>EMPLOYMENT_1</remote-alias>
+              <ordinal>42</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>EMPLOYMENT_2</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[EMPLOYMENT_2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>EMPLOYMENT_2</remote-alias>
+              <ordinal>43</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>EMPLOYMENT_3</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[EMPLOYMENT_3]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>EMPLOYMENT_3</remote-alias>
+              <ordinal>44</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>STATEFP</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[STATEFP]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>STATEFP</remote-alias>
+              <ordinal>45</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>COUNTYFP</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[COUNTYFP]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>COUNTYFP</remote-alias>
+              <ordinal>46</ordinal>
+              <family>Master_Data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>GEOID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[GEOID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>GEOID</remote-alias>
+              <ordinal>47</ordinal>
+              <family>census_tract_shapefiles_all.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>492</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PointOrder</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[PointOrder]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PointOrder</remote-alias>
+              <ordinal>48</ordinal>
+              <family>census_tract_shapefiles_all.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>139</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SubPolygonId</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[SubPolygonId]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SubPolygonId</remote-alias>
+              <ordinal>49</ordinal>
+              <family>census_tract_shapefiles_all.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PointLatitude</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[PointLatitude]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PointLatitude</remote-alias>
+              <ordinal>50</ordinal>
+              <family>census_tract_shapefiles_all.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>16256</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PointLongitude</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[PointLongitude]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PointLongitude</remote-alias>
+              <ordinal>51</ordinal>
+              <family>census_tract_shapefiles_all.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>16256</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.82153' measure-ordering='alphabetic' measure-percentage='0.17847' show-structure='false' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Avg Family Size (Polygon) - Alabama'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Master_Data.csv+ (Multiple Connections)' name='federated.00lnh2y1jj76lr14pdxax0nyworf' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.00lnh2y1jj76lr14pdxax0nyworf'>
+            <column caption='Famsize' datatype='real' name='[FAMSIZE]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Id2]' role='dimension' type='ordinal' />
+            <column aggregation='Avg' caption='Point Latitude' datatype='real' name='[PointLatitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' caption='Point Longitude' datatype='real' name='[PointLongitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column aggregation='Sum' caption='Point Order' datatype='integer' name='[PointOrder]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column caption='Sub Polygon Id' datatype='integer' name='[SubPolygonId]' role='dimension' type='ordinal' />
+            <column-instance column='[PointLatitude]' derivation='Avg' name='[avg:PointLatitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[PointLongitude]' derivation='Avg' name='[avg:PointLongitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Id2]' derivation='None' name='[none:Id2:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[PointOrder]' derivation='None' name='[none:PointOrder:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[SubPolygonId]' derivation='None' name='[none:SubPolygonId:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[FAMSIZE]' derivation='Sum' name='[sum:FAMSIZE:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.00lnh2y1jj76lr14pdxax0nyworf].[avg:PointLongitude:qk]' field-type='quantitative' max='30885434.918511529' min='29900468.285198562' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.00lnh2y1jj76lr14pdxax0nyworf].[avg:PointLatitude:qk]' field-type='quantitative' max='4301581.2143581929' min='3577341.0428045429' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='tab_base' value='true' />
+            <format attr='enabled' id='um_lcover' value='true' />
+            <format attr='enabled' id='tab_coastline' value='false' />
+            <format attr='enabled' id='pp2_line' value='false' />
+            <format attr='enabled' id='light_adm0_bnd' value='false' />
+            <format attr='enabled' id='light_adm0_lbl' value='false' />
+            <format attr='enabled' id='um_adm0_bnd' value='true' />
+            <format attr='enabled' id='um_adm0_lbl' value='true' />
+            <format attr='enabled' id='light_pp2_statebounds' value='false' />
+            <format attr='enabled' id='light_pp2_statelabels' value='false' />
+            <format attr='enabled' id='pp2_adminlabels' value='false' />
+            <format attr='enabled' id='pp2_statebounds' value='true' />
+            <format attr='enabled' id='pp2_statelabels' value='true' />
+            <format attr='enabled' id='countybounds' value='false' />
+            <format attr='enabled' id='countylabels' value='false' />
+            <format attr='enabled' id='zipbounds' value='false' />
+            <format attr='enabled' id='ziplabels' value='false' />
+            <format attr='enabled' id='tab_areabounds' value='false' />
+            <format attr='enabled' id='tab_arealabels' value='false' />
+            <format attr='enabled' id='tab_msabounds' value='false' />
+            <format attr='enabled' id='tab_msalabels' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Polygon' />
+            <encodings>
+              <color column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[sum:FAMSIZE:qk]' />
+              <lod column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[none:Id2:ok]' />
+              <lod column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[none:SubPolygonId:ok]' />
+              <lod column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[none:State:nk]' />
+              <path column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[none:PointOrder:ok]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.00lnh2y1jj76lr14pdxax0nyworf].[avg:PointLatitude:qk]</rows>
+        <cols>[federated.00lnh2y1jj76lr14pdxax0nyworf].[avg:PointLongitude:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Census Population Estimates (Polygon)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Master_Data.csv+ (Multiple Connections)' name='federated.00lnh2y1jj76lr14pdxax0nyworf' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.00lnh2y1jj76lr14pdxax0nyworf'>
+            <column caption='Total Population Estimate' datatype='integer' name='[Estimate; Total]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Id2]' role='dimension' type='ordinal' />
+            <column aggregation='Avg' caption='Point Latitude' datatype='real' name='[PointLatitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' caption='Point Longitude' datatype='real' name='[PointLongitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column aggregation='Sum' caption='Point Order' datatype='integer' name='[PointOrder]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column caption='Sub Polygon Id' datatype='integer' name='[SubPolygonId]' role='dimension' type='ordinal' />
+            <column-instance column='[PointLatitude]' derivation='Avg' name='[avg:PointLatitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[PointLongitude]' derivation='Avg' name='[avg:PointLongitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Id2]' derivation='None' name='[none:Id2:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[PointOrder]' derivation='None' name='[none:PointOrder:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[SubPolygonId]' derivation='None' name='[none:SubPolygonId:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Estimate; Total]' derivation='Sum' name='[sum:Estimate; Total:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.00lnh2y1jj76lr14pdxax0nyworf].[avg:PointLongitude:qk]' field-type='quantitative' max='31768862.789496049' min='27821100.732129458' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.00lnh2y1jj76lr14pdxax0nyworf].[avg:PointLatitude:qk]' field-type='quantitative' max='6075897.0655091684' min='3173130.8468572656' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.00lnh2y1jj76lr14pdxax0nyworf].[sum:Estimate; Total:qk]' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#cfe2ce</color>
+                <color>#b0d4af</color>
+                <color>#94c692</color>
+                <color>#7ab877</color>
+                <color>#62aa5f</color>
+                <color>#4d9b49</color>
+                <color>#3a8d36</color>
+                <color>#297f25</color>
+                <color>#1b7117</color>
+                <color>#10630c</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='tab_base' value='true' />
+            <format attr='enabled' id='um_lcover' value='true' />
+            <format attr='enabled' id='tab_coastline' value='false' />
+            <format attr='enabled' id='pp2_line' value='false' />
+            <format attr='enabled' id='light_adm0_bnd' value='false' />
+            <format attr='enabled' id='light_adm0_lbl' value='false' />
+            <format attr='enabled' id='um_adm0_bnd' value='true' />
+            <format attr='enabled' id='um_adm0_lbl' value='true' />
+            <format attr='enabled' id='light_pp2_statebounds' value='false' />
+            <format attr='enabled' id='light_pp2_statelabels' value='false' />
+            <format attr='enabled' id='pp2_adminlabels' value='false' />
+            <format attr='enabled' id='pp2_statebounds' value='true' />
+            <format attr='enabled' id='pp2_statelabels' value='true' />
+            <format attr='enabled' id='countybounds' value='false' />
+            <format attr='enabled' id='countylabels' value='false' />
+            <format attr='enabled' id='zipbounds' value='false' />
+            <format attr='enabled' id='ziplabels' value='false' />
+            <format attr='enabled' id='tab_areabounds' value='false' />
+            <format attr='enabled' id='tab_arealabels' value='false' />
+            <format attr='enabled' id='tab_msabounds' value='false' />
+            <format attr='enabled' id='tab_msalabels' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Polygon' />
+            <encodings>
+              <color column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[sum:Estimate; Total:qk]' />
+              <lod column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[none:Id2:ok]' />
+              <lod column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[none:SubPolygonId:ok]' />
+              <lod column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[none:State:nk]' />
+              <path column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[none:PointOrder:ok]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.00lnh2y1jj76lr14pdxax0nyworf].[avg:PointLatitude:qk]</rows>
+        <cols>[federated.00lnh2y1jj76lr14pdxax0nyworf].[avg:PointLongitude:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Farm Territories (Polygon) - Alabama'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Master_Data.csv+ (Multiple Connections)' name='federated.00lnh2y1jj76lr14pdxax0nyworf' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.00lnh2y1jj76lr14pdxax0nyworf'>
+            <column caption='Farm - Farm' datatype='real' name='[FARM_2]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Id2]' role='dimension' type='ordinal' />
+            <column aggregation='Avg' caption='Point Latitude' datatype='real' name='[PointLatitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' caption='Point Longitude' datatype='real' name='[PointLongitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column aggregation='Sum' caption='Point Order' datatype='integer' name='[PointOrder]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column caption='Sub Polygon Id' datatype='integer' name='[SubPolygonId]' role='dimension' type='ordinal' />
+            <column-instance column='[PointLatitude]' derivation='Avg' name='[avg:PointLatitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[PointLongitude]' derivation='Avg' name='[avg:PointLongitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Id2]' derivation='None' name='[none:Id2:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[PointOrder]' derivation='None' name='[none:PointOrder:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[SubPolygonId]' derivation='None' name='[none:SubPolygonId:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[FARM_2]' derivation='Sum' name='[sum:FARM_2:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.00lnh2y1jj76lr14pdxax0nyworf].[avg:PointLongitude:qk]' field-type='quantitative' max='30885434.918511529' min='29900468.285198562' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.00lnh2y1jj76lr14pdxax0nyworf].[avg:PointLatitude:qk]' field-type='quantitative' max='4301581.2143581929' min='3577341.0428045429' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.00lnh2y1jj76lr14pdxax0nyworf].[sum:FARM_2:qk]' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#efe7d9</color>
+                <color>#edddc3</color>
+                <color>#ebd3ac</color>
+                <color>#e9ca96</color>
+                <color>#e8c080</color>
+                <color>#e6b76a</color>
+                <color>#e4ae55</color>
+                <color>#e2a540</color>
+                <color>#e09c2c</color>
+                <color>#df9418</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='tab_base' value='true' />
+            <format attr='enabled' id='um_lcover' value='true' />
+            <format attr='enabled' id='tab_coastline' value='false' />
+            <format attr='enabled' id='pp2_line' value='false' />
+            <format attr='enabled' id='light_adm0_bnd' value='false' />
+            <format attr='enabled' id='light_adm0_lbl' value='false' />
+            <format attr='enabled' id='um_adm0_bnd' value='true' />
+            <format attr='enabled' id='um_adm0_lbl' value='true' />
+            <format attr='enabled' id='light_pp2_statebounds' value='false' />
+            <format attr='enabled' id='light_pp2_statelabels' value='false' />
+            <format attr='enabled' id='pp2_adminlabels' value='false' />
+            <format attr='enabled' id='pp2_statebounds' value='true' />
+            <format attr='enabled' id='pp2_statelabels' value='true' />
+            <format attr='enabled' id='countybounds' value='false' />
+            <format attr='enabled' id='countylabels' value='false' />
+            <format attr='enabled' id='zipbounds' value='false' />
+            <format attr='enabled' id='ziplabels' value='false' />
+            <format attr='enabled' id='tab_areabounds' value='false' />
+            <format attr='enabled' id='tab_arealabels' value='false' />
+            <format attr='enabled' id='tab_msabounds' value='false' />
+            <format attr='enabled' id='tab_msalabels' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Polygon' />
+            <encodings>
+              <color column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[sum:FARM_2:qk]' />
+              <lod column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[none:Id2:ok]' />
+              <lod column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[none:SubPolygonId:ok]' />
+              <lod column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[none:State:nk]' />
+              <path column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[none:PointOrder:ok]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.00lnh2y1jj76lr14pdxax0nyworf].[avg:PointLatitude:qk]</rows>
+        <cols>[federated.00lnh2y1jj76lr14pdxax0nyworf].[avg:PointLongitude:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 6'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Master_Data.csv+ (Multiple Connections)' name='federated.00lnh2y1jj76lr14pdxax0nyworf' />
+          </datasources>
+          <datasource-dependencies datasource='federated.00lnh2y1jj76lr14pdxax0nyworf'>
+            <column caption='Speaks English - Does Not Speak English' datatype='real' name='[SPEAKS_ENGLISH_1]' role='measure' type='quantitative' />
+            <column-instance column='[SPEAKS_ENGLISH_1]' derivation='Sum' name='[sum:SPEAKS_ENGLISH_1:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[sum:SPEAKS_ENGLISH_1:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name='Unemployement Rates (County) Alabama'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Master_Data.csv+ (Multiple Connections)' name='federated.00lnh2y1jj76lr14pdxax0nyworf' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.00lnh2y1jj76lr14pdxax0nyworf'>
+            <column caption='Unemployment Rate' datatype='real' name='[Calculation_2733614650822086657]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='1-sum([EMPLOYMENT_1])/sum([EMPLOYMENT_1]+[EMPLOYMENT_2])' />
+            </column>
+            <column datatype='string' name='[County]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+            <column caption='Employment - Employed' datatype='real' name='[EMPLOYMENT_1]' role='measure' type='quantitative' />
+            <column caption='Employment - Unemployed' datatype='real' name='[EMPLOYMENT_2]' role='measure' type='quantitative' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[County]' derivation='None' name='[none:County:nk]' pivot='key' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2733614650822086657]' derivation='User' name='[usr:Calculation_2733614650822086657:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.00lnh2y1jj76lr14pdxax0nyworf].[Longitude (generated)]' field-type='quantitative' max='-8207491.3435425404' min='-11008787.740149589' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.00lnh2y1jj76lr14pdxax0nyworf].[Latitude (generated)]' field-type='quantitative' max='4530828.917930699' min='2471052.1557196332' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.00lnh2y1jj76lr14pdxax0nyworf].[usr:Calculation_2733614650822086657:qk]' num-steps='5' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#f1dbdd</color>
+                <color>#f2c5c9</color>
+                <color>#f3b0b5</color>
+                <color>#f39aa1</color>
+                <color>#f4848d</color>
+                <color>#f56d79</color>
+                <color>#f55764</color>
+                <color>#f64150</color>
+                <color>#f72a3b</color>
+                <color>#f81427</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='tab_base' value='true' />
+            <format attr='enabled' id='um_lcover' value='true' />
+            <format attr='enabled' id='tab_coastline' value='false' />
+            <format attr='enabled' id='pp2_line' value='false' />
+            <format attr='enabled' id='light_adm0_bnd' value='false' />
+            <format attr='enabled' id='light_adm0_lbl' value='false' />
+            <format attr='enabled' id='um_adm0_bnd' value='true' />
+            <format attr='enabled' id='um_adm0_lbl' value='true' />
+            <format attr='enabled' id='light_pp2_statebounds' value='false' />
+            <format attr='enabled' id='light_pp2_statelabels' value='false' />
+            <format attr='enabled' id='pp2_adminlabels' value='false' />
+            <format attr='enabled' id='pp2_statebounds' value='true' />
+            <format attr='enabled' id='pp2_statelabels' value='true' />
+            <format attr='enabled' id='countybounds' value='false' />
+            <format attr='enabled' id='countylabels' value='false' />
+            <format attr='enabled' id='zipbounds' value='false' />
+            <format attr='enabled' id='ziplabels' value='false' />
+            <format attr='enabled' id='tab_areabounds' value='false' />
+            <format attr='enabled' id='tab_arealabels' value='false' />
+            <format attr='enabled' id='tab_msabounds' value='false' />
+            <format attr='enabled' id='tab_msalabels' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[usr:Calculation_2733614650822086657:qk]' />
+              <lod column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[none:State:nk]' />
+              <lod column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[none:County:nk]' />
+              <geometry column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[Geometry (generated)]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.00lnh2y1jj76lr14pdxax0nyworf].[Latitude (generated)]</rows>
+        <cols>[federated.00lnh2y1jj76lr14pdxax0nyworf].[Longitude (generated)]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Unemployment Rates (Polygon) - Alabama'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Master_Data.csv+ (Multiple Connections)' name='federated.00lnh2y1jj76lr14pdxax0nyworf' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.00lnh2y1jj76lr14pdxax0nyworf'>
+            <column caption='Unemployment Rate' datatype='real' name='[Calculation_2733614650822086657]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='1-sum([EMPLOYMENT_1])/sum([EMPLOYMENT_1]+[EMPLOYMENT_2])' />
+            </column>
+            <column caption='Employment - Employed' datatype='real' name='[EMPLOYMENT_1]' role='measure' type='quantitative' />
+            <column caption='Employment - Unemployed' datatype='real' name='[EMPLOYMENT_2]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Id2]' role='dimension' type='ordinal' />
+            <column aggregation='Avg' caption='Point Latitude' datatype='real' name='[PointLatitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' caption='Point Longitude' datatype='real' name='[PointLongitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column aggregation='Sum' caption='Point Order' datatype='integer' name='[PointOrder]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column caption='Sub Polygon Id' datatype='integer' name='[SubPolygonId]' role='dimension' type='ordinal' />
+            <column-instance column='[PointLatitude]' derivation='Avg' name='[avg:PointLatitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[PointLongitude]' derivation='Avg' name='[avg:PointLongitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Id2]' derivation='None' name='[none:Id2:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[PointOrder]' derivation='None' name='[none:PointOrder:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[SubPolygonId]' derivation='None' name='[none:SubPolygonId:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_2733614650822086657]' derivation='User' name='[usr:Calculation_2733614650822086657:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.00lnh2y1jj76lr14pdxax0nyworf].[avg:PointLongitude:qk]' field-type='quantitative' max='30885434.918511529' min='29900468.285198562' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.00lnh2y1jj76lr14pdxax0nyworf].[avg:PointLatitude:qk]' field-type='quantitative' max='4301581.2143581929' min='3577341.0428045429' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.00lnh2y1jj76lr14pdxax0nyworf].[usr:Calculation_2733614650822086657:qk]' num-steps='5' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#f2dfe0</color>
+                <color>#f3cccf</color>
+                <color>#f4babd</color>
+                <color>#f5a8ac</color>
+                <color>#f6959b</color>
+                <color>#f78289</color>
+                <color>#f86f77</color>
+                <color>#f95c65</color>
+                <color>#fa4953</color>
+                <color>#fc3641</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='tab_base' value='true' />
+            <format attr='enabled' id='um_lcover' value='true' />
+            <format attr='enabled' id='tab_coastline' value='false' />
+            <format attr='enabled' id='pp2_line' value='false' />
+            <format attr='enabled' id='light_adm0_bnd' value='false' />
+            <format attr='enabled' id='light_adm0_lbl' value='false' />
+            <format attr='enabled' id='um_adm0_bnd' value='true' />
+            <format attr='enabled' id='um_adm0_lbl' value='true' />
+            <format attr='enabled' id='light_pp2_statebounds' value='false' />
+            <format attr='enabled' id='light_pp2_statelabels' value='false' />
+            <format attr='enabled' id='pp2_adminlabels' value='false' />
+            <format attr='enabled' id='pp2_statebounds' value='true' />
+            <format attr='enabled' id='pp2_statelabels' value='true' />
+            <format attr='enabled' id='countybounds' value='false' />
+            <format attr='enabled' id='countylabels' value='false' />
+            <format attr='enabled' id='zipbounds' value='false' />
+            <format attr='enabled' id='ziplabels' value='false' />
+            <format attr='enabled' id='tab_areabounds' value='false' />
+            <format attr='enabled' id='tab_arealabels' value='false' />
+            <format attr='enabled' id='tab_msabounds' value='false' />
+            <format attr='enabled' id='tab_msalabels' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Polygon' />
+            <encodings>
+              <color column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[usr:Calculation_2733614650822086657:qk]' />
+              <lod column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[none:Id2:ok]' />
+              <lod column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[none:SubPolygonId:ok]' />
+              <lod column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[none:State:nk]' />
+              <path column='[federated.00lnh2y1jj76lr14pdxax0nyworf].[none:PointOrder:ok]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.00lnh2y1jj76lr14pdxax0nyworf].[avg:PointLatitude:qk]</rows>
+        <cols>[federated.00lnh2y1jj76lr14pdxax0nyworf].[avg:PointLongitude:qk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='Census Population Estimates (Polygon)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.00lnh2y1jj76lr14pdxax0nyworf].[sum:Estimate; Total:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='worksheet' name='Unemployment Rates (Polygon) - Alabama'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.00lnh2y1jj76lr14pdxax0nyworf].[usr:Calculation_2733614650822086657:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='worksheet' name='Unemployement Rates (County) Alabama'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.00lnh2y1jj76lr14pdxax0nyworf].[usr:Calculation_2733614650822086657:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='worksheet' name='Avg Family Size (Polygon) - Alabama'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.00lnh2y1jj76lr14pdxax0nyworf].[sum:FAMSIZE:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='worksheet' name='Farm Territories (Polygon) - Alabama'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.00lnh2y1jj76lr14pdxax0nyworf].[sum:FARM_2:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 6'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+  </windows>
+</workbook>
