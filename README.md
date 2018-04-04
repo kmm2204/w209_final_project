@@ -1,17 +1,11 @@
 # w209_final_project
 
-*Pipeline.ipynb*
+*ACS Data Foundation Pipline*
 
-Links to data are in dropbox link (size issue)
+All the metrics are in the ACS Data Foundation Pipeline notebook
 
-Data manipulation to merge acs, ipums, and fcc* (TBD)
+Writes out master.pkl
 
-Writes out Master_Data.csv
+*Census Shapefile & Plotting*
 
-*Tableau Files*
-
-HTC Workbook - visuals
-
-Master_Data.csv - acs + ipums data
-
-census_tract_shapefiles_all.csv - to draw polygons for census tract (This is in dropbox only because of size issues)
+Attempts to read in shape files and plot. Some tracts are regular polygons while others are multi.
