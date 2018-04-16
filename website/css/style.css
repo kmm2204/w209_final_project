@@ -1,0 +1,41 @@
+h1, h2, h3{
+  font-family: sans-serif;
+  text-shadow: 2px 1px 0px #fff, 3px 2px 0px rgba(0,0,0,0.15);
+}
+
+.chart rect.mail {
+  fill: steelblue;
+}
+
+.chart rect.mail.active {
+  fill: orange;
+}
+
+.chart rect.spam {
+  fill: orange;
+}
+
+.chart text.value {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.chart text.label {
+  font: 10px sans-serif;
+}
+
+.chart text.axisLabel {
+  font: 18px sans-serif;
+  text-shadow: 2px 1px 0px #fff, 3px 2px 0px rgba(0,0,0,0.15);
+}
+
+.dataNotes {
+  width: 600px;
+}
+
+.hoverText {
+  fill: white;
+  font: 12px sans-serif;
+  text-anchor: center;
+}
