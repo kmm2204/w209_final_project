@@ -28,7 +28,7 @@ The data folder also has a file called "Data_pipeline.ipynb"
 * Additional files needed to publish our dashboard to a website are in the website folder.
 
 
-### Bokeh
+### Note on the Bokeh folder
 * While this project did not end up using Bokeh for our final project, we have included plotting by the county level in bokeh for all of our hard to count metrics. 
 * We ultimately decided against Bokeh due to load times, but the fully functional code is posted in the /Bokeh folder. 
 
