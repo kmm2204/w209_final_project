@@ -1,11 +1,37 @@
-# w209_final_project
+# 2020 Hard to Count Visualization
 
-*ACS Data Foundation Pipline*
+## Data acquisition and requirements
 
-All the metrics are in the ACS Data Foundation Pipeline notebook
+We included data from several sources. 
 
-Writes out master.pkl
+* The census bureau's planning database. See [census_planning_database](https://www.census.gov/research/data/planning_database/2016/).
+* The FCC's internet access data. See [FCC] (https://www.fcc.gov/general/form-477-census-tract-data-internet-access-services).
+* The census bureau's American Community Survey(ACS) 5 year estimates from the census bureau's API [ACS] (https://www.census.gov/data/developers/data-sets/acs-5year.html)
+* Requirements: python 3.6, pandas, numpy, geopandas, requests, matplotlib, Tableau 10.5
 
-*Census Shapefile & Plotting*
+## Data cleaning aggregation
 
-Attempts to read in shape files and plot. Some tracts are regular polygons while others are multi.
+The data folder also has a file called "Data_pipeline.ipynb"
+
+* "Data pipeline" has the code for calling census bureau's API for the ACS data by census tract and state and aggregating it. 
+* "Data pipeline" combines the ACS data with all of the other data by using the census bureau's GEOID's.
+* "Data pipeline" will export a csv called "Master.csv"
+
+## Uploading "Master.csv" to Tableau
+
+* Tableau 10.5 was used to make this visualization.
+* Once you have the "Master.csv" file, import this file into Tableau.
+* We have posted our Tableau dashboard publicly. [Tableau] (https://public.tableau.com/profile/robert.deng#!/vizhome/HTC_Final_Project/HTCStory?publish=yes)
+
+## Publishing to a website
+
+* Additional files needed to publish our dashboard to a website are in the website folder.
+
+
+### Bokeh
+* While this project did not end up using Bokeh for our final project, we have included plotting by the county level in bokeh for all of our hard to count metrics. 
+* We ultimately decided against Bokeh due to load times, but the fully functional code is posted in the /Bokeh folder. 
+
+
+
+
