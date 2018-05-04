@@ -4,9 +4,9 @@
 
 We included data from several sources. 
 
-* The census bureau's planning database. See [census_planning_database](https://www.census.gov/research/data/planning_database/2016/).
-* The FCC's internet access data. See [FCC](https://www.fcc.gov/general/form-477-census-tract-data-internet-access-services).
-* The census bureau's American Community Survey(ACS) 5 year estimates from the census bureau's API [ACS](https://www.census.gov/data/developers/data-sets/acs-5year.html)
+* The census bureau's planning database. See [census planning database data](https://www.census.gov/research/data/planning_database/2016/).
+* The FCC's internet access data. See [FCC data](https://www.fcc.gov/general/form-477-census-tract-data-internet-access-services).
+* The census bureau's American Community Survey(ACS) 5 year estimates from the census bureau's API [ACS data](https://www.census.gov/data/developers/data-sets/acs-5year.html).
 * Requirements: python 3.6, pandas, numpy, geopandas, requests, matplotlib, Tableau 10.5
 
 ## Data cleaning aggregation
@@ -21,7 +21,7 @@ The data folder also has a file called "Data_pipeline.ipynb"
 
 * Tableau 10.5 was used to make this visualization.
 * Once you have the "Master.csv" file, import this file into Tableau.
-* We have posted our Tableau dashboard publicly. [Tableau](https://public.tableau.com/profile/robert.deng#!/vizhome/HTC_Final_Project/HTCStory?publish=yes)
+* We have posted our Tableau dashboard publicly. You can download it here: [Tableau dashboard](https://public.tableau.com/profile/robert.deng#!/vizhome/HTC_Final_Project/HTCStory?publish=yes)
 
 ## Publishing to a website
 
